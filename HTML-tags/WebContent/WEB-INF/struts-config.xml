@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="InputForm" type="forms.InputForm"/>
+    </form-beans>
+    
+    <action-mappings>
+	    <action name="InputForm" path="/InputAction" scope="session" parameter="method"   type="actions.InputAction">
+	        <forward name="success" path="/index.jsp" />
+	    </action>
+	</action-mappings>
+    
+    <message-resources parameter="ApplicationResource"/>
+</struts-config>

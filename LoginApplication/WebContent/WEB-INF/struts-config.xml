@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="InputForm" type="forms.InputForm"/>
+    </form-beans>
+    
+    <action-mappings>
+        <action path="/Login" type="org.apache.struts.actions.ForwardAction" parameter="/success.jsp"/>
+        <action parameter="method" name="InputForm" path="/Dispatch" type="actions.LoginAction">
+            <forward name="success" path="/failure.jsp" />
+        </action>
+        <action path="/IncludeAction" type="org.apache.struts.actions.IncludeAction" parameter="/success.jsp"/>
+        <action path="/switch" type="org.apache.struts.actions.SwitchAction"/>
+        <action path="/veraSuccess"
+			type="org.apache.struts.actions.ForwardAction" 
+			parameter="/switch.do?page=/veraSuccess.do&prefix=/module"/>
+    </action-mappings>
+    <message-resources parameter="ApplicationResource"/>
+</struts-config>
