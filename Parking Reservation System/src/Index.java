@@ -93,7 +93,6 @@ public class Index {
 					f.getSlots().replace(slotno, "deactivated");
 					System.out.println(f.getSlots().toString());
 					break;
-		
 		}
 	}
 	

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <form-beans>
+       <form-bean name = "choiceForm" type = "org.apache.struts.action.DynaActionForm">
+       		<form-property name = "choice" type = "java.lang.String" initial = "BookTicket"/>
+       </form-bean>
+       <form-bean name = "choiceForm2" type = "org.apache.struts.action.DynaActionForm">
+       		<form-property name = "choice" type = "java.lang.String" initial = "Customer"/>
+       </form-bean>
+       <form-bean name = "checkoutForm" type = "org.apache.struts.action.DynaActionForm">
+       		<form-property name = "choice" type = "java.lang.String" initial="Basement"/>
+       		<form-property name = "slotNo" type = "java.lang.Integer"/>
+       </form-bean>
+    </form-beans>
+    
+    <action-mappings>
+		<action name="choiceForm" path="/choice" parameter ="choice"
+			scope="request" type="actions.DoTask" validate="false">
+			<forward name="bookticket" path="/bookticket.jsp" />
+			<forward name="checkout" path="/checkout.jsp" />
+			<forward name="floor" path="/index.jsp" />
+			<forward name="basement" path="/index.jsp" />
+		</action>
+		<action name="choiceForm2" path="/bookTicket" parameter ="choice"
+			scope="request" type="actions.BookTicket" validate="false">
+			<forward name="success" path="/index.jsp"/>
+		</action>
+		<action name="checkoutForm" path="/checkOut"
+			scope="request" type="actions.CheckOut" validate="false">
+			<forward name="success" path="/index.jsp"/>
+		</action>
+    </action-mappings>
+    <message-resources parameter="ApplicationResource"/>
+</struts-config>
