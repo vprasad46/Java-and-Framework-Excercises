@@ -1,0 +1,43 @@
+.disp{
+	border: 3px solid black;
+	width: 100%;
+}
+#displayDiv{
+	margin-left: 50px;
+}
+td{
+	text-align: center;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+#errors{
+	display: none;
+	text-align: center;
+	border: 1px dashed red;
+	margin: 5px;
+}
+
+div[class^='c']{
+	width:100px;
+	height: 10px;
+}
+
+.c-1{
+	background-color: #B22222;
+}
+
+.c-2{
+	background-color: #483D8B;
+}
+
+.c-3{
+	background-color: #FF00FF;
+}
+
+.c-4{
+	background-color: #FF7F50;
+}
+
+.wrap{
+	text-align: center;
+}

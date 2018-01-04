@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<tiles-definitions>
+	<definition name="baseLayout" path="/baseLayout.jsp">
+        <put name="title" value="Parking Reservation System" />
+        <put name="header" value="/header.jsp" />
+        <put name="menu" value="/choiceform.jsp" />
+        <put name="body" value="/body.jsp" />   
+    </definition>
+     <definition name="book" extends="baseLayout">
+        <put name="title" value="Book Ticket" />
+        <put name="body" value="/bookform.jsp" />     
+    </definition>
+    <definition name="check" extends="baseLayout">
+        <put name="title" value="Book Ticket" />
+        <put name="body" value="/checkoutform.jsp" />     
+    </definition>
+</tiles-definitions>
